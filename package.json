@@ -1,0 +1,59 @@
+{
+    "name": "@alduino/coroutines",
+    "version": "0.0.0",
+    "description": "Generator-based coroutines ala Unity",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup",
+        "release": "pnpm build && changeset publish",
+        "lint": "eslint --fix . && prettier --write .",
+        "size": "size-limit",
+        "prepare": "husky install"
+    },
+    "keywords": [
+        "coroutines",
+        "generators",
+        "async",
+        "timing",
+        "unity"
+    ],
+    "author": "Alduino <npm@alduino.dev>",
+    "license": "MIT",
+    "files": [
+        "dist"
+    ],
+    "lint-staged": {
+        "*.ts": [
+            "eslint --fix .",
+            "prettier --write"
+        ]
+    },
+    "size-limit": [
+        {
+            "path": "dist/index.mjs",
+            "limit": "4 kB"
+        }
+    ],
+    "devDependencies": {
+        "@changesets/changelog-github": "^0.4.8",
+        "@changesets/cli": "^2.26.1",
+        "@size-limit/preset-small-lib": "^8.2.4",
+        "@tsconfig/strictest": "^2.0.1",
+        "@typescript-eslint/eslint-plugin": "^5.59.9",
+        "@typescript-eslint/parser": "^5.59.9",
+        "eslint": "^8.42.0",
+        "eslint-import-resolver-typescript": "^3.5.5",
+        "eslint-plugin-import": "^2.27.5",
+        "husky": "^8.0.0",
+        "lint-staged": "^13.2.2",
+        "prettier": "^2.8.8",
+        "size-limit": "^8.2.4",
+        "tsup": "^6.7.0",
+        "typescript": "^5.1.3"
+    },
+    "dependencies": {
+        "tiny-invariant": "^1.3.1"
+    }
+}
